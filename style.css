@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: rgb(75, 170, 243);
+}
+
+
+h1 {
+    text-align: center;
+    padding-top: 10px;
+    color: rgb(20, 207, 249);
+}
+
+.kyc {
+    width: 90%;
+    height: 85vh;
+    background-color: rgb(173, 236, 255);
+    padding: 30px;
+    margin: 5%;
+}
+
+input, label {
+    width: 100%;
+    height: 50px;
+    margin: 10px;
+    font-size: 20px;
+}
