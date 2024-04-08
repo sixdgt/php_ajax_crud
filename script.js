@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    getKycData();
+
     $('#kycForm').on('submit', function(e){
         e.preventDefault();
         let full_name = $('#full_name').val();
@@ -25,3 +27,23 @@ $(document).ready(function(){
 
     });
 });
+
+function getKycData(){
+    $.ajax({
+        type: "GET",
+        url: "fetch_data.php",
+        success: function(response){
+            // we have to use loop to get data from response
+            $.each(JSON.parse(response), function(key, value){
+                $("#tableData").append(
+                    "<tr>" +
+                    "<td>"+ value['full_name'] +"</td>" +
+                    "<td>"+ value['email'] +"</td>" +
+                    "<td>"+ value['contact'] +"</td>" +
+                    "<td>"+ value['address'] +"</td>" +
+                    "</tr>"
+                );
+            });
+        }
+    });
+}
